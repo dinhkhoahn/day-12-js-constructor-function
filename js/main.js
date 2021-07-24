@@ -11,7 +11,7 @@ function Character(name, level, mainWeapon,secondaryWeapon, type) {
     };
     this.changeWeapon = function() {
         if (this.weapon == mainWeapon) {
-            this.weapon = this.secondaryWeapon
+            this.weapon = secondaryWeapon
         } else {
             this.weapon = mainWeapon
         }
