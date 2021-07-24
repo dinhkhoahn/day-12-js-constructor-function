@@ -1,15 +1,20 @@
 //Constructor Function Character
-function Character(name, level, weapon, type) {
+function Character(name, level, mainWeapon,secondaryWeapon, type) {
     this.name = name;
     this.level = level || 1;
-    this.weapon = weapon;
+    this.weapon = mainWeapon;
+    this.secondaryWeapon = secondaryWeapon
     this.type = type;
     this.attack = function() {
         console.log("Fight!!")
         return this
     };
     this.changeWeapon = function() {
-        this.weapon = "Fist"
+        if (this.weapon == mainWeapon) {
+            this.weapon = this.secondaryWeapon
+        } else {
+            this.weapon = mainWeapon
+        }
         return this
     };
     this.sayHi = function() {
@@ -17,7 +22,7 @@ function Character(name, level, weapon, type) {
         return this
     };
 }
-let knight = new Character("Arthur", 3, "Sword", "knight")
+let knight = new Character("Arthur", 3, "Sword","Dagger", "knight")
 knight.sayHi().attack().changeWeapon()
 console.log(knight.weapon)
 
